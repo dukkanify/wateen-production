@@ -321,7 +321,7 @@ body.rtl .lang-ar {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background-image: url("/hero.avif");
+  background-image: url("hero.avif");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
