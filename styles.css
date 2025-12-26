@@ -38,21 +38,6 @@
     var(--primary) 0%,
     var(--primary-dark) 100%
   );
-  --gradient-dark: linear-gradient(
-    135deg,
-    var(--secondary-dark) 0%,
-    var(--secondary) 100%
-  );
-  --gradient-accent: linear-gradient(
-    135deg,
-    var(--accent) 0%,
-    var(--primary) 100%
-  );
-  --gradient-hero: linear-gradient(
-    135deg,
-    rgb(248, 235, 189) 0%,
-    rgb(242, 221, 117) 100%
-  );
 
   /* Typography */
   --font-primary: "Poppins", sans-serif;
@@ -229,7 +214,7 @@ body.rtl .lang-ar {
 
 .nav-links a {
   font-weight: 500;
-  color: var(--gray-700);
+  color: var(--gray-900);
   position: relative;
   padding: 5px 0;
 }
@@ -373,8 +358,8 @@ body.rtl .lang-ar {
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.75) 0%,
-    rgba(130, 124, 97, 0.7) 100%
+    rgba(205, 205, 205, 0.75) 0%,
+    rgba(152, 151, 151, 0.7) 100%
   );
   z-index: 1;
 }
@@ -410,7 +395,7 @@ body.rtl .lang-ar {
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-size: clamp(6rem, 6vw, 4rem);
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: 25px;
@@ -423,7 +408,7 @@ body.rtl .lang-ar {
 
 .hero-description {
   font-size: 1.2rem;
-  color: var(--gray-700);
+  color: var(--gray-900);
   max-width: 700px;
   margin: 0 auto 40px;
   line-height: 1.8;
@@ -1282,7 +1267,7 @@ body.rtl .form-group label {
 
 @media (max-width: 480px) {
   .logo-img {
-    width: 25px;
+    width: 70px;
   }
 
   .logo {
@@ -1294,7 +1279,7 @@ body.rtl .form-group label {
   }
 
   .hero-title {
-    font-size: 2rem;
+    font-size: 4rem;
   }
 
   .hero-description {
