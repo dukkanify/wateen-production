@@ -208,11 +208,6 @@ const Clients = () => {
 
         <div className="clients-grid">
           <div className="client-card">
-            <img
-              className="client-logo"
-              src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&s=4c3d2b1a0f9e8d7c6b5a4a3b2c1d0e9f"
-              alt="Government Entities"
-            />
             <div className="client-icon">
               <i className="fas fa-building-columns"></i>
             </div>
@@ -230,11 +225,6 @@ const Clients = () => {
           </div>
 
           <div className="client-card">
-            <img
-              className="client-logo"
-              src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&s=1d0a3b4c5e6f7a8b9c0d2e3f4a5b6c7d"
-              alt="Corporates & Institutions"
-            />
             <div className="client-icon">
               <i className="fas fa-briefcase"></i>
             </div>
@@ -254,11 +244,6 @@ const Clients = () => {
           </div>
 
           <div className="client-card">
-            <img
-              className="client-logo"
-              src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&s=7b6c5d4e3f2a1b0c9d8e7f6a5b4c3d2e"
-              alt="Universities & Educational Bodies"
-            />
             <div className="client-icon">
               <i className="fas fa-graduation-cap"></i>
             </div>
@@ -281,11 +266,6 @@ const Clients = () => {
           </div>
 
           <div className="client-card">
-            <img
-              className="client-logo"
-              src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&s=2a6f8b5f0b1f2e9d3c6a8d3e6b5f8a1c"
-              alt="NGOs & Social Initiatives"
-            />
             <div className="client-icon">
               <i className="fas fa-hands-helping"></i>
             </div>

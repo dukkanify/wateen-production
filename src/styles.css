@@ -345,6 +345,8 @@ body::after {
 .logo-img {
   height: 60px;
   display: block;
+  visibility: visible;
+  opacity: 1;
 }
 .nav-links {
   list-style: none;
@@ -394,6 +396,128 @@ body::after {
   background: #0b1320;
   margin: 4px 0;
   transition: all 0.18s ease;
+}
+
+/* Nav actions container */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Language toggle button */
+.lang-toggle {
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(11, 24, 40, 0.04);
+  box-shadow: 0 6px 20px rgba(11, 24, 40, 0.04);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #0b1320;
+  transition: all 0.2s ease;
+}
+
+.lang-toggle:hover {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 8px 25px rgba(11, 24, 40, 0.08);
+}
+
+/* Mobile menu */
+.mobile-menu {
+  position: fixed;
+  inset: 72px 18px auto 18px;
+  z-index: 70;
+  animation: mobile-menu-slide-down 0.3s ease-out;
+}
+
+.mobile-menu-content {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.7)
+  );
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 18px 40px rgba(6, 18, 38, 0.08);
+  border: 1px solid rgba(16, 24, 40, 0.04);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.mobile-nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", "Cairo", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+}
+
+.mobile-nav-links li {
+  animation: mobile-menu-item-fade-in 0.4s ease-out both;
+}
+
+.mobile-nav-links li:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.mobile-nav-links li:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.mobile-nav-links li:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.mobile-nav-links li:nth-child(4) {
+  animation-delay: 0.25s;
+}
+.mobile-nav-links li:nth-child(5) {
+  animation-delay: 0.3s;
+}
+.mobile-nav-links li:nth-child(6) {
+  animation-delay: 0.35s;
+}
+
+.mobile-nav-links a {
+  display: block;
+  padding: 12px 0;
+  text-decoration: none;
+  color: #0b1320;
+  font-weight: 500;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  border-radius: 8px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.mobile-nav-links a:hover,
+.mobile-nav-links a:focus {
+  color: #0b1320;
+  background: rgba(107, 182, 255, 0.08);
+  transform: translateX(4px);
+}
+
+/* Mobile menu animations */
+@keyframes mobile-menu-slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes mobile-menu-item-fade-in {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* -------------------------
@@ -573,7 +697,9 @@ body::after {
 [dir="ltr"] .service-card h3,
 [dir="ltr"] .service-card p,
 [dir="ltr"] .client-card h3,
-[dir="ltr"] .client-card p {
+[dir="ltr"] .client-card p,
+[dir="ltr"] .visual-card h3,
+[dir="ltr"] .visual-card p {
   text-align: left;
 }
 
@@ -584,7 +710,9 @@ body::after {
 [dir="rtl"] .service-card h3,
 [dir="rtl"] .service-card p,
 [dir="rtl"] .client-card h3,
-[dir="rtl"] .client-card p {
+[dir="rtl"] .client-card p,
+[dir="rtl"] .visual-card h3,
+[dir="rtl"] .visual-card p {
   text-align: right;
 }
 
@@ -1049,6 +1177,19 @@ body::after {
   .mobile-menu-btn {
     display: flex;
   }
+  .nav-actions {
+    display: flex;
+  }
+  .contact {
+    padding: 40px 0;
+  }
+  .footer {
+    margin-top: 20px;
+  }
+  .footer-content {
+    flex-direction: column;
+    gap: 20px;
+  }
   .hero-title {
     font-size: clamp(28px, 8vw, 40px);
   }
@@ -1058,6 +1199,14 @@ body::after {
   .hero-media {
     min-width: unset;
     width: 100%;
+  }
+}
+@media (min-width: 1001px) {
+  .mobile-menu-btn {
+    display: none;
+  }
+  .nav-actions {
+    display: flex;
   }
 }
 @media (max-width: 560px) {
@@ -1468,3 +1617,687 @@ textarea:focus {
     }
   }
 }
+
+/* ===== Hero improvements (append) ===== */
+
+/* subtle decorative vignette / orb for depth (non-intrusive) */
+.hero::after {
+  content: "";
+  position: absolute;
+  right: 8%;
+  top: 4%;
+  width: 520px;
+  height: 380px;
+  border-radius: 50%;
+  filter: blur(48px) saturate(1.05);
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(
+      circle at 40% 40%,
+      rgba(255, 122, 193, 0.16),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 70% 70%,
+      rgba(107, 182, 255, 0.12),
+      transparent 35%
+    );
+  opacity: 0.9;
+  transform: translateZ(0);
+}
+
+/* tighten hero spacing on small screens */
+@media (max-width: 720px) {
+  .hero {
+    padding: 40px 0 28px;
+  }
+  .hero-left {
+    max-width: 100%;
+    padding: 0;
+  }
+  .hero-title {
+    font-size: clamp(22px, 7vw, 34px);
+    padding: 6px 10px;
+  }
+  .hero-description {
+    font-size: 15px;
+    margin-top: 8px;
+  }
+  .hero-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+}
+
+/* hero title gradient/shine to add life on desktop */
+.hero-title span {
+  background: linear-gradient(
+    90deg,
+    rgba(6, 18, 38, 0.98) 0%,
+    rgba(6, 18, 38, 0.98) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  display: inline-block;
+}
+
+/* micro-animated underline / pulse */
+.hero-title span::after {
+  content: "";
+  display: block;
+  width: 56%;
+  height: 6px;
+  border-radius: 999px;
+  margin-top: 10px;
+  background: linear-gradient(
+    90deg,
+    rgba(107, 182, 255, 0.18),
+    rgba(255, 122, 193, 0.14)
+  );
+  opacity: 0.9;
+  transform-origin: left;
+  animation: pulse-underline 3.8s ease-in-out infinite;
+}
+@keyframes pulse-underline {
+  0% {
+    transform: scaleX(0.9);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scaleX(1.02);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(0.9);
+    opacity: 0.7;
+  }
+}
+
+/* podcast carousel: improved visuals */
+.podcast-carousel {
+  margin-top: 18px;
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  align-items: flex-start;
+  position: relative;
+  z-index: 6; /* keep above decorative orb */
+}
+.podcast-carousel.dragging {
+  cursor: grabbing;
+}
+
+/* podcast card tweaks */
+.podcast-card {
+  scroll-snap-align: center;
+  min-width: 260px;
+  max-width: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.62),
+    rgba(255, 255, 255, 0.52)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  padding: 12px;
+  box-shadow: 0 12px 30px rgba(6, 18, 38, 0.06);
+  position: relative;
+}
+.podcast-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+/* play overlay button (replaces non-clickable .play-overlay) */
+.play-overlay-btn {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 72px;
+  height: 72px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: linear-gradient(
+    135deg,
+    rgba(107, 182, 255, 0.95),
+    rgba(255, 122, 193, 0.95)
+  );
+  color: white;
+  box-shadow: 0 10px 30px rgba(107, 182, 255, 0.18);
+  transform: translateY(0);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 220ms ease, transform 220ms ease;
+  pointer-events: auto;
+}
+
+/* show play on hover / focus — accessible for keyboard users too */
+.podcast-card:focus-within .play-overlay-btn,
+.podcast-card:hover .play-overlay-btn {
+  opacity: 1;
+  transform: translateY(-4px);
+}
+
+/* smaller play button on tiny devices */
+@media (max-width: 420px) {
+  .play-overlay-btn {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* podcast controls (dots + arrows) */
+.podcast-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.svc-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(11, 18, 32, 0.06);
+  box-shadow: 0 8px 26px rgba(6, 18, 38, 0.06);
+  cursor: pointer;
+  user-select: none;
+}
+.arrow-symbol {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0b1320;
+}
+
+/* dots */
+.svc-dots {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+.svc-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(11, 18, 32, 0.12);
+  border: 1px solid rgba(11, 18, 32, 0.04);
+  transition: transform 0.18s, background 0.18s;
+  cursor: pointer;
+}
+.svc-dot.active {
+  transform: scale(1.25);
+  background: linear-gradient(90deg, var(--accent2), var(--accent1));
+  box-shadow: 0 8px 26px rgba(107, 182, 255, 0.12);
+}
+
+/* ensure hero content sits above background */
+.hero .hero-inner {
+  position: relative;
+  z-index: 10;
+}
+
+/* small improvement: reduce hero button shadow on mobile so CTAs feel lighter */
+@media (max-width: 560px) {
+  .btn-primary {
+    box-shadow: 0 6px 18px rgba(6, 18, 38, 0.05);
+  }
+}
+
+/* focus-visible for play button */
+.play-overlay-btn:focus {
+  outline: 3px solid rgba(107, 182, 255, 0.18);
+  outline-offset: 4px;
+}
+
+/* End hero improvements */
+/* ------- Hero alignment fixes (append) ------- */
+
+/* 1) Make hero-left a predictable column container */
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* desktop default: keep left-aligned text */
+  text-align: left;
+  gap: 8px; /* consistent spacing between title, desc, buttons */
+}
+
+/* Buttons group: default desktop layout (left-aligned with title) */
+.hero-buttons {
+  display: flex;
+  gap: 14px;
+  margin-top: 8px;
+  justify-content: flex-start; /* explicit so it's deterministic */
+  align-items: center;
+}
+
+/* 2) Mobile: center the whole block (title, desc, buttons) */
+@media (max-width: 1000px) {
+  .hero-left {
+    align-items: center;
+    text-align: center;
+    padding: 0 6px;
+  }
+  .hero-buttons {
+    justify-content: center; /* center buttons under the title */
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* ensure the hero title and its decorative underline stay centered */
+  .hero-title {
+    display: inline-block; /* avoid full-width stretching */
+  }
+}
+
+/* 3) Very small devices: tighten spacing */
+@media (max-width: 420px) {
+  .hero {
+    padding-top: 36px;
+    padding-bottom: 24px;
+  }
+  .hero-description {
+    margin-top: 6px;
+    font-size: 15px;
+  }
+  .hero-buttons {
+    gap: 8px;
+  }
+}
+
+/* 4) Optional: center desktop hero as a variant (uncomment if you prefer centered desktop)
+@media (min-width: 1001px) {
+  .hero-left {
+    align-items: center;
+    text-align: center;
+  }
+  .hero-buttons { justify-content: center; }
+}
+*/
+
+/* 5) Small safeguard: ensure hero-inner children don't cause visual offset */
+.container.hero-inner {
+  display: flex;
+  flex-direction: column; /* stack on small screens (you already handle with media queries) */
+}
+@media (min-width: 1001px) {
+  .container.hero-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+/* 6) RTL adjustments (keeps arrows and alignment sensible) */
+[dir="rtl"] .hero-left {
+  text-align: right;
+  align-items: flex-end;
+}
+@media (max-width: 1000px) {
+  [dir="rtl"] .hero-left {
+    align-items: center;
+    text-align: center;
+  }
+}
+/* ===== About section refinements (append) ===== */
+
+/* limit readable line length for the about text on wide screens */
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 28px;
+  align-items: start;
+}
+
+/* make text column narrower on very wide screens for better readability */
+@media (min-width: 1400px) {
+  .about-content {
+    grid-template-columns: minmax(420px, 1fr) 520px;
+  }
+}
+
+/* about text tweaks */
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.about-description {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 78ch; /* limit for comfortable reading */
+}
+
+/* highlight paragraph treatment (keeps your content unchanged) */
+.about-description.highlight {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.45)
+  );
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Visual column improvements */
+.about-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* visual-card: consistent frosted glass, slight lift and smoother animations */
+.visual-card {
+  background: var(--glass-opaque);
+  border-radius: 14px;
+  padding: 16px;
+  border: var(--glass-border);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  box-shadow: var(--shadow-soft);
+  transition: transform 220ms cubic-bezier(0.2, 0.9, 0.2, 1), box-shadow 220ms;
+}
+.visual-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-strong);
+}
+.visual-card h3 {
+  margin: 8px 0 6px;
+}
+.visual-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.58;
+}
+
+/* visual-icon: keep size and center alignment */
+.visual-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.55),
+    rgba(255, 255, 255, 0.45)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  margin-bottom: 8px;
+  color: #0b1320;
+}
+
+/* studio image: small elevation, consistent radius */
+.about-visual > div img {
+  box-shadow: 0 10px 30px rgba(6, 18, 38, 0.04);
+}
+
+/* Mobile: stack content with visual first (shortens perceived scroll) */
+@media (max-width: 1000px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  /* Put visual first on mobile to give a strong visual lead */
+  .about-visual {
+    order: -1;
+  }
+  .about-description {
+    max-width: 100%;
+    font-size: 15px;
+  }
+}
+
+/* Small screens: slightly reduce paddings for density */
+@media (max-width: 560px) {
+  .visual-card {
+    padding: 12px;
+    border-radius: 12px;
+  }
+  .visual-icon {
+    width: 48px;
+    height: 48px;
+  }
+  .about-description {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+}
+
+/* subtle entrance animation (non-intrusive) */
+.visual-card,
+.about-description {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: about-fade-in 520ms ease forwards;
+  animation-delay: 0.08s;
+}
+@keyframes about-fade-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RTL adjustments */
+[dir="rtl"] .about-content {
+  direction: rtl;
+}
+[dir="rtl"] .about-text {
+  text-align: right;
+}
+[dir="rtl"] .visual-icon {
+  margin-bottom: 8px;
+}
+
+/* ensure images and cards remain accessible and keyboard-focusable */
+.visual-card:focus-within,
+.visual-card:focus {
+  outline: 3px solid rgba(107, 182, 255, 0.12);
+  outline-offset: 6px;
+  transform: translateY(-6px);
+}
+
+/* End about refinements */
+
+/* contact */
+/* ===== Contact section enhancements (append) ===== */
+
+/* Make contact-content more layout-friendly (desktop two-column, mobile stacked) */
+.contact-content {
+  display: grid;
+  grid-template-columns: 360px 1fr; /* left column for contact cards, right for form */
+  gap: 28px;
+  align-items: start;
+}
+
+/* contact card visuals */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.contact-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.52)
+  );
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 10px 30px rgba(6, 18, 38, 0.04);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.contact-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(6, 18, 38, 0.06);
+}
+
+/* icon block */
+.contact-icon {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.58),
+    rgba(255, 255, 255, 0.45)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #0b1320;
+  flex-shrink: 0;
+}
+
+/* details */
+.contact-details h4 {
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+.contact-details a {
+  color: #0b1320;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Form: make two inputs appear side-by-side on wide screens */
+.contact-form {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.62),
+    rgba(255, 255, 255, 0.52)
+  );
+  padding: 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(8px);
+}
+.form-row {
+  display: flex;
+  gap: 12px;
+}
+.form-row .form-group {
+  flex: 1;
+}
+
+/* tighten form group spacing for density */
+.form-group {
+  margin-bottom: 12px;
+  position: relative;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(11, 24, 40, 0.06);
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 15px;
+}
+
+/* contact buttons layout */
+.btn-submit {
+  padding: 10px 14px;
+  font-weight: 800;
+  border-radius: 12px;
+}
+.btn-submit svg {
+  opacity: 0.95;
+}
+
+/* mobile: stack columns, visual-first optional */
+@media (max-width: 1000px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .contact-info {
+    order: -1;
+  } /* show contact cards first on mobile */
+  .form-row {
+    flex-direction: column;
+  }
+  .contact-item {
+    padding: 12px;
+    border-radius: 12px;
+  }
+}
+
+/* very small screens: reduce paddings */
+@media (max-width: 420px) {
+  .contact-item {
+    padding: 10px;
+    gap: 10px;
+  }
+  .contact-icon {
+    width: 44px;
+    height: 44px;
+  }
+  .contact-details h4 {
+    font-size: 15px;
+  }
+  .form-group input,
+  .form-group textarea {
+    padding: 10px;
+    font-size: 14px;
+  }
+  .btn-submit {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+}
+
+/* focus / accessibility */
+.contact-item:focus-within,
+.contact-item:focus {
+  outline: 3px solid rgba(107, 182, 255, 0.12);
+  outline-offset: 6px;
+}
+.contact-form .form-group input:focus,
+.contact-form .form-group textarea:focus {
+  outline: 3px solid rgba(107, 182, 255, 0.12);
+  outline-offset: 2px;
+}
+
+/* RTL support */
+[dir="rtl"] .contact-details {
+  text-align: right;
+}
+[dir="rtl"] .form-row {
+  direction: rtl;
+}
+
+/* End contact enhancements */

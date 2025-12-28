@@ -189,7 +189,7 @@ const Services = () => {
           {/* Podcast Production */}
           <div className="service-card" data-aos="fade-up">
             <img
-              src="herosection.png"
+              src={`${process.env.PUBLIC_URL}/herosection.png`}
               alt="Podcast production"
               style={{
                 width: "100%",
@@ -218,7 +218,7 @@ const Services = () => {
           {/* Social Media Coverage */}
           <div className="service-card" data-aos="fade-up">
             <img
-              src="herosection.png"
+              src={`${process.env.PUBLIC_URL}/herosection.png`}
               alt="Social media coverage"
               style={{
                 width: "100%",
@@ -249,7 +249,7 @@ const Services = () => {
           {/* Commercial Production */}
           <div className="service-card" data-aos="fade-up">
             <img
-              src="herosection.png"
+              src={`${process.env.PUBLIC_URL}/herosection.png`}
               alt="Commercial production"
               style={{
                 width: "100%",
@@ -280,7 +280,7 @@ const Services = () => {
           {/* Visual Content */}
           <div className="service-card" data-aos="fade-up">
             <img
-              src="herosection.png"
+              src={`${process.env.PUBLIC_URL}/herosection.png`}
               alt="Visual content"
               style={{
                 width: "100%",
@@ -309,7 +309,7 @@ const Services = () => {
           {/* AI-Powered Solutions */}
           <div className="service-card featured" data-aos="fade-up">
             <img
-              src="herosection.png"
+              src={`${process.env.PUBLIC_URL}/herosection.png`}
               alt="AI solutions"
               style={{
                 width: "100%",
@@ -343,7 +343,7 @@ const Services = () => {
           {/* Media Consulting */}
           <div className="service-card" data-aos="fade-up">
             <img
-              src="herosection.png"
+              src={`${process.env.PUBLIC_URL}/herosection.png`}
               alt="Consulting"
               style={{
                 width: "100%",

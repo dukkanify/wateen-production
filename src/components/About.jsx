@@ -45,9 +45,43 @@ const About = () => {
           </div>
 
           <div className="about-visual">
-            <div className="visual-card">
-              <div className="visual-icon">
-                <i className="fas fa-lightbulb"></i>
+            <div
+              className="visual-card"
+              role="region"
+              aria-label={currentLang === "en" ? "Our Vision" : "رؤيتنا"}
+            >
+              <div className="visual-icon" aria-hidden="true">
+                {/* Lightbulb SVG (inline, reliable) */}
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path
+                    d="M9 18h6"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M10 22h4"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M12 3a6 6 0 00-4 10v1a2 2 0 002 2h4a2 2 0 002-2v-1a6 6 0 00-4-10z"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
               </div>
               <h3 data-en="Our Vision" data-ar="رؤيتنا">
                 {currentLang === "en" ? "Our Vision" : "رؤيتنا"}
@@ -62,9 +96,37 @@ const About = () => {
               </p>
             </div>
 
-            <div className="visual-card">
-              <div className="visual-icon">
-                <i className="fas fa-bullseye"></i>
+            <div
+              className="visual-card"
+              role="region"
+              aria-label={currentLang === "en" ? "Our Mission" : "مهمتنا"}
+            >
+              <div className="visual-icon" aria-hidden="true">
+                {/* Bullseye SVG */}
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="9"
+                    stroke="currentColor"
+                    strokeWidth="1.4"
+                  />
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="5"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                  />
+                  <circle cx="12" cy="12" r="2" fill="currentColor" />
+                </svg>
               </div>
               <h3 data-en="Our Mission" data-ar="مهمتنا">
                 {currentLang === "en" ? "Our Mission" : "مهمتنا"}

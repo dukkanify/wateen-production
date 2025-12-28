@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="footer-brand">
             <div className="logo-inline">
               <img
-                src="wateenlogo.png"
+                src={`${process.env.PUBLIC_URL}/wateenlogo.png`}
                 alt="WATEEN logo"
                 className="logo-img small"
               />
