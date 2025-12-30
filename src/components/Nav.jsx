@@ -64,6 +64,7 @@ const Nav = () => {
           <div className="nav-actions">
             <button
               className="mobile-menu-btn"
+              type="button"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Open menu"
             >
@@ -74,6 +75,7 @@ const Nav = () => {
 
             <button
               className="lang-toggle"
+              type="button"
               onClick={toggleLanguage}
               aria-label="Toggle Language"
             >

@@ -51,6 +51,7 @@ const Contact = () => {
           {/* Contact info column (cards) */}
           <div
             className="contact-info"
+            style={{ textAlign: currentLang === "en" ? "left" : "right" }}
             aria-label={
               currentLang === "en" ? "Contact information" : "معلومات الاتصال"
             }
@@ -75,11 +76,16 @@ const Contact = () => {
                   />
                 </svg>
               </div>
-              <div className="contact-details">
+              <div
+                className="contact-details"
+                style={{ textAlign: currentLang === "en" ? "left" : "right" }}
+              >
                 <h4 data-en="Phone" data-ar="الهاتف">
                   {currentLang === "en" ? "Phone" : "الهاتف"}
                 </h4>
-                <a href="tel:+971566137333">+971 56 613 7333</a>
+                <a href="tel:+971566137333" dir="ltr">
+                  +971 56 613 7333
+                </a>
               </div>
             </div>
 
@@ -110,11 +116,16 @@ const Contact = () => {
                   />
                 </svg>
               </div>
-              <div className="contact-details">
+              <div
+                className="contact-details"
+                style={{ textAlign: currentLang === "en" ? "left" : "right" }}
+              >
                 <h4 data-en="Email" data-ar="البريد الإلكتروني">
                   {currentLang === "en" ? "Email" : "البريد الإلكتروني"}
                 </h4>
-                <a href="mailto:wateen.ae@hotmail.com">wateen.ae@hotmail.com</a>
+                <a href="mailto:wateen.ae@hotmail.com" dir="ltr">
+                  wateen.ae@hotmail.com
+                </a>
               </div>
             </div>
 
@@ -152,7 +163,10 @@ const Contact = () => {
                   />
                 </svg>
               </div>
-              <div className="contact-details">
+              <div
+                className="contact-details"
+                style={{ textAlign: currentLang === "en" ? "left" : "right" }}
+              >
                 <h4 data-en="Website" data-ar="الموقع الإلكتروني">
                   {currentLang === "en" ? "Website" : "الموقع الإلكتروني"}
                 </h4>
@@ -160,6 +174,7 @@ const Contact = () => {
                   href="https://www.wateenproduction.ae"
                   target="_blank"
                   rel="noopener noreferrer"
+                  dir="ltr"
                 >
                   www.wateenproduction.ae
                 </a>
