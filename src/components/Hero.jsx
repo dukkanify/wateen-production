@@ -69,18 +69,11 @@ const Hero = () => {
     setCurrentIndex((prev) => (prev + 1) % cards.length);
 
     setTimeout(() => {
-      const strip = stripRef.current;
       // If we've moved past the middle set, reset to the beginning of middle set
       if (slideIndex + 1 >= cards.length * 2) {
-        strip.style.transition = "none";
         setSlideIndex(cards.length);
-        setTimeout(() => {
-          strip.style.transition = "";
-          animatingRef.current = false;
-        }, 50);
-      } else {
-        animatingRef.current = false;
       }
+      animatingRef.current = false;
     }, 600);
   }, [slideIndex, cards.length]);
 
@@ -93,18 +86,11 @@ const Hero = () => {
     setCurrentIndex((prev) => (prev - 1 + cards.length) % cards.length);
 
     setTimeout(() => {
-      const strip = stripRef.current;
       // If we've moved before the middle set, reset to the end of middle set
       if (slideIndex - 1 < cards.length) {
-        strip.style.transition = "none";
         setSlideIndex(cards.length * 2 - 1);
-        setTimeout(() => {
-          strip.style.transition = "";
-          animatingRef.current = false;
-        }, 50);
-      } else {
-        animatingRef.current = false;
       }
+      animatingRef.current = false;
     }, 600);
   }, [slideIndex, cards.length]);
 
@@ -257,23 +243,19 @@ const Hero = () => {
     <section className="hero" id="home" aria-label="Hero Section">
       <div className="container hero-inner">
         <div className="hero-left">
-          <h1 className="hero-title" data-aos="fade-up" data-aos-delay="200">
+          <h1 className="hero-title">
             <span>
               {currentLang === "en" ? "WATEEN Production" : "وتين للإنتاج"}
             </span>
           </h1>
 
-          <p
-            className="hero-description"
-            data-aos="fade-up"
-            data-aos-delay="400"
-          >
+          <p className="hero-description">
             {currentLang === "en"
               ? "Transforming ideas into engaging media experiences."
               : "نحول الأفكار إلى تجارب إعلامية جذابة."}
           </p>
 
-          <div className="hero-buttons" data-aos="fade-up" data-aos-delay="600">
+          <div className="hero-buttons">
             <a href="#services" className="btn btn-primary">
               {currentLang === "en" ? "Explore Services" : "استكشف خدماتنا"}{" "}
               <svg
@@ -299,11 +281,7 @@ const Hero = () => {
             </a>
           </div>
 
-          <div
-            style={{ marginTop: 20 }}
-            data-aos="fade-up"
-            data-aos-delay="800"
-          >
+          <div style={{ marginTop: 20 }}>
             <div
               className="circ-carousel"
               ref={wrapperRef}
