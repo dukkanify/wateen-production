@@ -2118,6 +2118,21 @@ textarea:focus {
   }
 }
 
+/* Values grid responsive styles */
+.values-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+  /* 2 columns on mobile */
+}
+
+@media (min-width: 768px) {
+  .values-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    /* Bigger items on desktop */
+  }
+}
+
 /* RTL adjustments */
 [dir="rtl"] .about-content {
   direction: rtl;
