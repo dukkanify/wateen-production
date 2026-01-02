@@ -173,6 +173,226 @@ const About = () => {
               </p>
             </div>
           </div>
+
+          {/* Our Values Section */}
+          <div className="about-values" style={{ marginTop: "48px" }}>
+            <div
+              className="section-header"
+              style={{ textAlign: currentLang === "en" ? "left" : "right" }}
+            >
+              <span
+                className="section-tag"
+                data-en="Our Values"
+                data-ar="قيمنا"
+              >
+                {currentLang === "en" ? "Our Values" : "قيمنا"}
+              </span>
+            </div>
+            <div
+              className="values-grid"
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
+                gap: "16px",
+              }}
+            >
+              {/* Authenticity */}
+              <div
+                className="value-card"
+                style={{
+                  background: "rgba(52, 152, 219, 0.1)",
+                  borderRadius: "12px",
+                  padding: "16px",
+                  textAlign: currentLang === "en" ? "left" : "right",
+                  border: "1px solid rgba(52, 152, 219, 0.2)",
+                }}
+                data-aos="fade-up"
+              >
+                <div
+                  className="value-icon"
+                  style={{
+                    fontSize: "22px",
+                    marginBottom: "8px",
+                    color: "#3498db",
+                  }}
+                >
+                  <i className="fas fa-heart" aria-hidden="true"></i>
+                </div>
+                <h4
+                  style={{
+                    fontSize: "15px",
+                    fontWeight: "600",
+                    marginBottom: "6px",
+                    color: "#1a1a1a",
+                  }}
+                  data-en="Authenticity"
+                  data-ar="الأصالة"
+                >
+                  {currentLang === "en" ? "Authenticity" : "الأصالة"}
+                </h4>
+                <p
+                  style={{
+                    fontSize: "12px",
+                    lineHeight: "1.5",
+                    color: "#666",
+                  }}
+                  data-en="Real stories, real impact"
+                  data-ar="قصص حقيقية، تأثير حقيقي"
+                >
+                  {currentLang === "en"
+                    ? "Real stories, real impact"
+                    : "قصص حقيقية، تأثير حقيقي"}
+                </p>
+              </div>
+
+              {/* Excellence */}
+              <div
+                className="value-card"
+                style={{
+                  background: "rgba(52, 152, 219, 0.1)",
+                  borderRadius: "12px",
+                  padding: "16px",
+                  textAlign: currentLang === "en" ? "left" : "right",
+                  border: "1px solid rgba(52, 152, 219, 0.2)",
+                }}
+                data-aos="fade-up"
+              >
+                <div
+                  className="value-icon"
+                  style={{
+                    fontSize: "22px",
+                    marginBottom: "8px",
+                    color: "#3498db",
+                  }}
+                >
+                  <i className="fas fa-award" aria-hidden="true"></i>
+                </div>
+                <h4
+                  style={{
+                    fontSize: "15px",
+                    fontWeight: "600",
+                    marginBottom: "6px",
+                    color: "#1a1a1a",
+                  }}
+                  data-en="Excellence"
+                  data-ar="التميز"
+                >
+                  {currentLang === "en" ? "Excellence" : "التميز"}
+                </h4>
+                <p
+                  style={{
+                    fontSize: "12px",
+                    lineHeight: "1.5",
+                    color: "#666",
+                  }}
+                  data-en="High production quality in every detail"
+                  data-ar="جودة إنتاج عالية في كل التفاصيل"
+                >
+                  {currentLang === "en"
+                    ? "High production quality in every detail"
+                    : "جودة إنتاج عالية في كل التفاصيل"}
+                </p>
+              </div>
+
+              {/* Creativity */}
+              <div
+                className="value-card"
+                style={{
+                  background: "rgba(52, 152, 219, 0.1)",
+                  borderRadius: "12px",
+                  padding: "16px",
+                  textAlign: currentLang === "en" ? "left" : "right",
+                  border: "1px solid rgba(52, 152, 219, 0.2)",
+                }}
+                data-aos="fade-up"
+              >
+                <div
+                  className="value-icon"
+                  style={{
+                    fontSize: "22px",
+                    marginBottom: "8px",
+                    color: "#3498db",
+                  }}
+                >
+                  <i className="fas fa-lightbulb" aria-hidden="true"></i>
+                </div>
+                <h4
+                  style={{
+                    fontSize: "15px",
+                    fontWeight: "600",
+                    marginBottom: "6px",
+                    color: "#1a1a1a",
+                  }}
+                  data-en="Creativity"
+                  data-ar="الإبداع"
+                >
+                  {currentLang === "en" ? "Creativity" : "الإبداع"}
+                </h4>
+                <p
+                  style={{
+                    fontSize: "12px",
+                    lineHeight: "1.5",
+                    color: "#666",
+                  }}
+                  data-en="Innovative storytelling approaches"
+                  data-ar="أساليب سرد قصصي مبتكرة"
+                >
+                  {currentLang === "en"
+                    ? "Innovative storytelling approaches"
+                    : "أساليب سرد قصصي مبتكرة"}
+                </p>
+              </div>
+
+              {/* Impact */}
+              <div
+                className="value-card"
+                style={{
+                  background: "rgba(52, 152, 219, 0.1)",
+                  borderRadius: "12px",
+                  padding: "16px",
+                  textAlign: currentLang === "en" ? "left" : "right",
+                  border: "1px solid rgba(52, 152, 219, 0.2)",
+                }}
+                data-aos="fade-up"
+              >
+                <div
+                  className="value-icon"
+                  style={{
+                    fontSize: "22px",
+                    marginBottom: "8px",
+                    color: "#3498db",
+                  }}
+                >
+                  <i className="fas fa-bullhorn" aria-hidden="true"></i>
+                </div>
+                <h4
+                  style={{
+                    fontSize: "15px",
+                    fontWeight: "600",
+                    marginBottom: "6px",
+                    color: "#1a1a1a",
+                  }}
+                  data-en="Impact"
+                  data-ar="التأثير"
+                >
+                  {currentLang === "en" ? "Impact" : "التأثير"}
+                </h4>
+                <p
+                  style={{
+                    fontSize: "12px",
+                    lineHeight: "1.5",
+                    color: "#666",
+                  }}
+                  data-en="Content that informs, inspires, and influences"
+                  data-ar="محتوى يُعلم ويُلهم ويُؤثر"
+                >
+                  {currentLang === "en"
+                    ? "Content that informs, inspires, and influences"
+                    : "محتوى يُعلم ويُلهم ويُؤثر"}
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

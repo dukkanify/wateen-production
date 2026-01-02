@@ -32,7 +32,7 @@ const WhyUs = () => {
 
   // Ensure card refs length matches
   useEffect(() => {
-    cardsRef.current = cardsRef.current.slice(0, 4); // we have 4 cards
+    cardsRef.current = cardsRef.current.slice(0, 8); // we have 8 cards
   }, []);
 
   // Update active dot based on center of viewport
@@ -255,6 +255,100 @@ const WhyUs = () => {
                 : "نصمم المحتوى كأصول إعلامية ذات قيمة طويلة الأمد، وليس للاستخدام لمرة واحدة."}
             </p>
           </div>
+
+          {/* Card 5 */}
+          <div
+            className="why-card"
+            ref={(el) => (cardsRef.current[4] = el)}
+            data-aos="fade-right"
+          >
+            <div className="why-icon">
+              <i className="fas fa-map-marked-alt" aria-hidden="true"></i>
+            </div>
+            <h3 data-en="UAE Media Expertise" data-ar="خبرة إعلامية إماراتية">
+              {currentLang === "en"
+                ? "UAE Media Expertise"
+                : "خبرة إعلامية إماراتية"}
+            </h3>
+            <p
+              data-en="Strong understanding of UAE media landscape and cultural context."
+              data-ar="فهم عميق للمشهد الإعلامي الإماراتي والسياق الثقافي."
+            >
+              {currentLang === "en"
+                ? "Strong understanding of UAE media landscape and cultural context."
+                : "فهم عميق للمشهد الإعلامي الإماراتي والسياق الثقافي."}
+            </p>
+          </div>
+
+          {/* Card 6 */}
+          <div
+            className="why-card"
+            ref={(el) => (cardsRef.current[5] = el)}
+            data-aos="fade-right"
+          >
+            <div className="why-icon">
+              <i className="fas fa-book-open" aria-hidden="true"></i>
+            </div>
+            <h3 data-en="Strategic Storytelling" data-ar="سرد قصصي استراتيجي">
+              {currentLang === "en"
+                ? "Strategic Storytelling"
+                : "سرد قصصي استراتيجي"}
+            </h3>
+            <p
+              data-en="Professional storytelling with strategic depth and purpose."
+              data-ar="سرد قصصي احترافي بعمق استراتيجي وهدف واضح."
+            >
+              {currentLang === "en"
+                ? "Professional storytelling with strategic depth and purpose."
+                : "سرد قصصي احترافي بعمق استراتيجي وهدف واضح."}
+            </p>
+          </div>
+
+          {/* Card 7 */}
+          <div
+            className="why-card"
+            ref={(el) => (cardsRef.current[6] = el)}
+            data-aos="fade-right"
+          >
+            <div className="why-icon">
+              <i className="fas fa-video" aria-hidden="true"></i>
+            </div>
+            <h3 data-en="High-Quality Production" data-ar="إنتاج عالي الجودة">
+              {currentLang === "en"
+                ? "High-Quality Production"
+                : "إنتاج عالي الجودة"}
+            </h3>
+            <p
+              data-en="High-quality audio & visual production with attention to detail."
+              data-ar="إنتاج صوتي ومرئي عالي الجودة مع الاهتمام بالتفاصيل."
+            >
+              {currentLang === "en"
+                ? "High-quality audio & visual production with attention to detail."
+                : "إنتاج صوتي ومرئي عالي الجودة مع الاهتمام بالتفاصيل."}
+            </p>
+          </div>
+
+          {/* Card 8 */}
+          <div
+            className="why-card"
+            ref={(el) => (cardsRef.current[7] = el)}
+            data-aos="fade-right"
+          >
+            <div className="why-icon">
+              <i className="fas fa-location-arrow" aria-hidden="true"></i>
+            </div>
+            <h3 data-en="Flexible Solutions" data-ar="حلول مرنة">
+              {currentLang === "en" ? "Flexible Solutions" : "حلول مرنة"}
+            </h3>
+            <p
+              data-en="Flexible on-site & studio solutions tailored to your needs."
+              data-ar="حلول مرنة في الموقع والاستوديو مصممة لتلبية احتياجاتك."
+            >
+              {currentLang === "en"
+                ? "Flexible on-site & studio solutions tailored to your needs."
+                : "حلول مرنة في الموقع والاستوديو مصممة لتلبية احتياجاتك."}
+            </p>
+          </div>
         </div>
 
         {/* Controls (mobile only) */}
@@ -274,7 +368,7 @@ const WhyUs = () => {
                 verticalAlign: "middle",
               }}
             >
-              {[0, 1, 2, 3].map((i) => (
+              {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
                 <button
                   key={i}
                   className={`svc-dot ${i === activeIdx ? "active" : ""}`}

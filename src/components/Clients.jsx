@@ -286,6 +286,28 @@ const Clients = () => {
                 : "إنتاج محتوى ترويجي وسردي يدعم الرسائل المجتمعية ويعزز المشاركة."}
             </p>
           </div>
+
+          <div className="client-card">
+            <div className="client-icon">
+              <i className="fas fa-user-tie"></i>
+            </div>
+            <h3
+              data-en="Personal Brands & Executives"
+              data-ar="العلامات الشخصية والمديرين التنفيذيين"
+            >
+              {currentLang === "en"
+                ? "Personal Brands & Executives"
+                : "العلامات الشخصية والمديرين التنفيذيين"}
+            </h3>
+            <p
+              data-en="Building thought leadership through strategic media production."
+              data-ar="بناء القيادة الفكرية من خلال الإنتاج الإعلامي الاستراتيجي."
+            >
+              {currentLang === "en"
+                ? "Building thought leadership through strategic media production."
+                : "بناء القيادة الفكرية من خلال الإنتاج الإعلامي الاستراتيجي."}
+            </p>
+          </div>
         </div>
       </div>
     </section>
