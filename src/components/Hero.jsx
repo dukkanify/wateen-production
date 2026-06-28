@@ -245,7 +245,7 @@ const Hero = () => {
         <div className="hero-left">
           <h1 className="hero-title" data-aos="fade-up">
             <span>
-              {currentLang === "en" ? "WATEEN Production" : "وتين للإنتاج"}
+              {currentLang === "en" ? "Wateen media production" : "وتين للانتاج الإعلامي"}
             </span>
           </h1>
 
